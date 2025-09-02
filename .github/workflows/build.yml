@@ -30,14 +30,8 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      # Instalacja Gradle 8.6
-      - name: Install Gradle 8.6
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 8.6
-
-      # Budowanie moda
-      - name: Build mod
+      # Budowanie moda przy użyciu Gradle Wrapper
+      - name: Build mod using Gradle Wrapper
         run: ./gradlew --no-daemon --refresh-dependencies clean build
 
       # Upload gotowego JAR
